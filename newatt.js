@@ -13,6 +13,7 @@ function getDate(event) {
 
 
     newRows(date.getFullYear(), year, gradyear, month, day, gradmonth, gradday)
+
 }
 
 const newRows = (cyr, byr, gyr, m, d, gm, gd) => {
@@ -21,6 +22,11 @@ const newRows = (cyr, byr, gyr, m, d, gm, gd) => {
     data = attemptsChecker(cyr, byr, gyr, m, d, gm, gd)
     let count = 0
 
+    // Get the main element once and use it throughout
+    const mainElement = document.getElementById('main');
+
+    // Clear existing content before adding new rows
+    mainElement.innerHTML = '';
 
 
     data.map(({ year, attempt, grad, timeslot, session }) => {
